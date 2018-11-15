@@ -1,0 +1,147 @@
+/* Web Fonts & Fonts */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/Proxima Nova Alt Regular-webfont.eot');
+    src: url('fonts/Proxima Nova Alt Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Alt Regular-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Alt Regular-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Alt Regular-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Alt Regular-webfont.svg#proxima_nova_altregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'proxima_nova_ltsemibold';
+    src: url('fonts/Proxima Nova Semibold-webfont.eot');
+    src: url('fonts/Proxima Nova Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Semibold-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Semibold-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Semibold-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Semibold-webfont.svg#proxima_nova_ltsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'futura_icgregular';
+    src: url('fonts/futura_icg-webfont.woff2') format('woff2'),
+         url('fonts/futura_icg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Reset */
+
+* {outline: none; box-sizing: border-box; -webkit-overflow-scrolling: touch}
+a {text-decoration: none; cursor: pointer;}
+body, html, h1, h2, h3, h4, h5, h6, p, header, footer, div, article, section, aside {padding: 0; margin: 0; position: relative;}
+body, html {height: 100%;}
+input, select, textarea, button {outline: 0; border: 0; appearance: none; -webkit-appearance: none; -moz-appearance: none; -o-appearance: none;}
+
+/* Common Classes */
+.wid100 {width:100%; float: left; }
+.fleft {float: left;}
+.fright {float: right;}
+.listn {list-style: none; margin: 0; padding: 0;}
+.defimg {width: 100%; height: auto;}
+.defimg2 {width: auto; height: auto;}
+.coverimg {width: 100%; height: 100%; object-fit: cover;}
+.containimg {width: 100%; height: 100%; object-fit: contain;}
+.pagewrapper {width: 100%;  margin: 0 auto; max-width: 1366px; padding: 0 25px;}
+.pagewrapper2 {width: 100%; margin: 0 auto; max-width: 990px;}
+img {@extend .defimg}
+.close {width: 35px; height: 35px; background: url(../images/iconset1.png) no-repeat right -35px; position: absolute; right: 10px; top: 10px;}
+
+
+/* Colors & Fonts */
+$fontmain: 'futura_icgregular', Arial, sans-serif;
+$fonthead: 'proxima_nova_ltsemibold', Arial, sans-serif;
+$fontlink: 'Proxima Nova', Arial, sans-serif;
+$fontcat: 'montserratsemibold', Arial, sans-serif;
+
+/* Colors */
+$white: #fff;
+$yellowgreen: #77bb53;
+$orange: #e48810;
+$lightgreen: #d0cc3a;
+$transorange: rgba(228,136,16,0.7);
+$translightgreen: rgba(194,205,35,0.7);
+$transblack: rgba(0,0,0,0.6);
+$textgray: #353535;
+$darkgray: #2d2d2d;
+
+/* body { height: 100vh; overflow-y: hidden;} */
+
+
+
+.burger_hldr { padding: 5px; border: 1px solid #d5d5d5; float: right; border-radius: 5px;
+    span { display: block; width: 35px; background: #d5d5d5; height: 4px; margin-bottom: 3px;}
+    span:last-of-type { margin-bottom: 0px;}
+}
+
+
+.sidebar { background: red; position: fixed; width: 0; height: 100%;  transition: 1s; right: 0;  overflow: hidden; 
+    > ul { transform: translate(-50%, -50%); position: absolute; left: 50%; top: 50%;    
+        > li { 
+            a { padding: 10px 0px; display: block; font-family: $fontmain; font-size: 20px;color: $white; opacity: 0;  }
+        }
+    }
+}
+
+.sidebar.active { width: 100%;
+    > ul {  
+        > li { 
+            a { animation: fadeInUp .5s ease-in-out 0s forwards;  }
+
+            a.first { animation-delay: 1s;}
+            a.second { animation-delay: 1.3s;} 
+            a.third { animation-delay: 1.6s;}
+            a.fourth { animation-delay: 1.9s;}
+        }
+    }
+}
+
+
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
